@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Buddy App - Διπλωματική Εργασία</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+        .section:nth-child(5) { animation-delay: 1s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+
+        .section h2::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #e74c3c;
+            transition: width 0.3s ease;
+        }
+
+        .section:hover h2::before {
+            width: 100%;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #3498db;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-card h3 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .tech-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.4s ease;
+        }
+
+        .tech-item:hover::before {
+            left: 100%;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .apis-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .api-item {
+            background: #f8f9fa;
+            padding: 12px 18px;
+            border-radius: 8px;
+            border-left: 3px solid #e74c3c;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+        }
+
+        .api-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 6s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .highlight h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #3498db, #e74c3c);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 15px 0 15px 70px;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 22px;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            background: #3498db;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .timeline-item h4 {
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Co-Traveller</h1>
+            <p>Οτιδήποτε χρειάζεται να γνωρίζεις και να προετοιμάσεις για το ταξίδι σου!</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Περιγραφή Εφαρμογής</h2>
+                <p>O <strong>Co-Traveller</strong> είναι μια ολοκληρωμένη mobile εφαρμογή που λειτουργεί ως intelligent ταξιδιωτικός συνοδός. Και αναλαμβάνει να σου λύσει τα παρακάτω προβλήματα: <br><br>Τι έγγραφα πρέπρει να έχω μαζί; - Μου το υπενθυμίζεις;<br> Τι ώρα φτάνει το αεροπλάνο μου; Έχει καθυστέρηση;<br> Τι ώρα πρέπει να είμαι πριν τη πτήση; <br> Πώς φτάνω στο ξενοδοχείο ακόμη και αν έχω θεμα με το ιντερνετ;</p>
+            </div>
+
+            <div class="section">
+                <h2>⚡ Βασικές Λειτουργίες</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>🛫 Flight Tracking</h3>
+                        <p>Real-time παρακολούθηση πτήσεων με live location, automatic scheduling και proactive notifications για καθυστερήσεις <strong>AviationStack</strong></p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📋 Document Management</h3>
+                        <p>Automated visa/passport checking, Ενημέρωση κατά την κράτηση και υπενθύμιση τη μέρα της πτήσης. Στοιχεία απο τα αντίστοια gov. Αντιστοιχία νομισμάτων</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🗺️ Smart Navigation</h3>
+                        <p>Optimized routes από αεροδρόμιο σε ξενοδοχείο, offline maps και οδηγίες σε local storage </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📱 Travel Journal</h3>
+                        <p>Προτάσεις για must-see και όμορφο αρχείο ταξιδιών του χρήστη ως ενθύμιο και "ηλεκτρονικο memories passport"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🛠️ Τεχνολογικό Stack</h2>
+                <div class="tech-stack">
+                    <div class="tech-item">React Native / Flutter</div>
+                    <div class="tech-item">Node.js </div>
+                    <div class="tech-item">SQlite</div>
+                    <div class="tech-item">Render cloud</div>
+                    <div class="tech-item">Available public APIs</div>
+                    <div class="tech-item">Weather APIs</div>
+                    <div class="tech-item">Firebase / Push Notifications</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔌 APIs & Data Sources</h2>
+                <div class="apis-list">
+                    <div class="api-item"><strong>AviationStack API</strong> - Flight tracking</div>
+                    <div class="api-item"><strong>Tourist Visa API</strong> - 194 countries data</div>
+                    <div class="api-item"><strong>Google Maps API</strong> - Navigation & traffic</div>
+                    <div class="api-item"><strong>OpenStreetMap</strong> - Offline mapping</div>
+                    <div class="api-item"><strong>Weather APIs</strong> - Destination forecasts</div>
+                    <div class="api-item"><strong>Currency APIs</strong> - Exchange rates</div>
+                </div>
+            </div>
+
+            <!-- <div class="section">
+                <h2>📚 Μαθησιακοί Στόχοι & Χρονοδιάγραμμα</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Φάση 1 (Μήνες 1-3)</h4>
+                        <p>Research APIs, architecture design, mobile development setup</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Φάση 2 (Μήνες 4-6)</h4>
+                        <p>Core functionality: flight tracking, basic UI, database integration</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Φάση 3 (Μήνες 7-9)</h4>
+                        <p>Advanced features: AI recommendations, offline support, security</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Φάση 4 (Μήνες 10-12)</h4>
+                        <p>Testing, optimization, deployment, documentation</p>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="highlight">
+                <h3>🚀 Καινοτομία & Επεκτασιμότητα</h3>
+                <p>Πρώτη εφαρμογή που συνδυάζει όλες τις παραπάνω λειτουργίες σε ένα ολοκληρωμένο ecosystem. Δυνατότητα επέκτασης με AΙ suggestions ή forum and ratings</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
