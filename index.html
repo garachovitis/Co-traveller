@@ -344,7 +344,30 @@
         <div class="content">
             <div class="section">
                 <h2>Περιγραφή Εφαρμογής</h2>
-                <p>O <strong>Co-Traveller</strong> είναι μια ολοκληρωμένη mobile εφαρμογή που λειτουργεί ως intelligent ταξιδιωτικός συνοδός. Και αναλαμβάνει να σου λύσει τα παρακάτω προβλήματα: <br><br>Τι έγγραφα πρέπρει να έχω μαζί; - Μου το υπενθυμίζεις;<br> Τι ώρα φτάνει το αεροπλάνο μου; Έχει καθυστέρηση;<br> Τι ώρα πρέπει να είμαι πριν τη πτήση; <br> Πώς φτάνω στο ξενοδοχείο ακόμη και αν έχω θεμα με το ιντερνετ;</p>
+                <p>O <strong>Co-Traveller</strong> είναι μια ολοκληρωμένη mobile εφαρμογή που λειτουργεί ως intelligent ταξιδιωτικός σύμβουλος και αναλαμβάνει να σου λύσει τα παρακάτω προβλήματα:</p>
+                <div style="padding-left: 1.5em;">
+                    <ul>
+                        <li>Ταξιδιωτικά έγγραφα</li>
+                        <li>Ώρα άφιξης πτήσης</li>
+                        <li>Ισοτιμία</li>
+                        <li>Πώς φτάνω στο ξενοδοχείο ακόμη και εκτός σύνδεσης</li>
+                        <li>Καιρός</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>UI Process</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Step 1</h3>
+                        <p>Εισάγεται κωδικό κράτησης πτήσης & όνομα Ξενοδοχείου</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Step 2</h3>
+                        <p>Έχετε έτοιμη και προσωποποιημένη εμπειρία για τον προορισμό και την πτήση σας</p>
+                    </div>
+                </div>
             </div>
 
             <div class="section">
@@ -352,19 +375,19 @@
                 <div class="features-grid">
                     <div class="feature-card">
                         <h3>🛫 Flight Tracking</h3>
-                        <p>Real-time παρακολούθηση πτήσεων, automatic scheduling για την ώρα άφιξης στο αεροδρόμιο <strong>notifications</strong> για καθυστερήσεις <br><strong>AviationStack</strong></p>
+                        <p>Real-time παρακολούθηση πτήσεων, automatic scheduling για την ώρα άφιξης στο αεροδρόμιο <strong>notifications</strong> για καθυστερήσεις <br><strong> πηγή: AviationStack</strong></p>
                     </div>
                     <div class="feature-card">
                         <h3>📋 Tαξιδιωτικά Έγγρφα </h3>
-                        <p>Automated visa/passport checking, Ενημέρωση για τα έγγραφα που χρειάζονται κατά την κράτηση και υπενθύμιση τη μέρα της πτήσης. Στοιχεία απο επίσημες πηγές.<br><br><strong> Αντιστοιχία νομισμάτων</strong> </p>
+                        <p>Automated visa/passport checking, Ενημέρωση για τα έγγραφα που χρειάζονται κατά την κράτηση και <strong>υπενθύμιση</strong> τη μέρα της πτήσης. Στοιχεία απο επίσημες πηγές.<br><br><strong> + Αντιστοιχία νομισμάτων</strong> </p>
                     </div>
                     <div class="feature-card">
                         <h3>🗺️ Πλοήγηση Από και Πρός το Αεροδρόμιο </h3>
-                        <p>Optimized routes από αεροδρόμιο σε ξενοδοχείο, <strong>offline</strong> route maps με οδηγίες σε local storage </p>
+                        <p>Optimized routes από αεροδρόμιο σε ξενοδοχείο, <strong>offline</strong> οδηγίες σε local storage </p>
                     </div>
                     <div class="feature-card">
                         <h3>📱 Tαξιδιωτικός οδηγός</h3>
-                        <p>Προτάσεις για must-see και όμορφο αρχείο ταξιδιών του χρήστη ως ενθύμιο "e-memories passport"</p>
+                        <p>Προτάσεις για must-see <br>+ όμορφο αρχείο ταξιδιών του χρήστη ως ενθύμιο <strong>"e-memories passport"</strong> με τους προορισμούς το ξενοδοχείο και τα έξοδα</p>
                     </div>
                 </div>
             </div>
@@ -377,8 +400,7 @@
                     <div class="tech-item">SQlite</div>
                     <div class="tech-item">Render cloud</div>
                     <div class="tech-item">Available public APIs</div>
-                    <div class="tech-item">Weather APIs (?)</div>
-                    <div class="tech-item">Firebase / Push Notifications</div>
+                    <div class="tech-item"> Push Notifications</div>
                 </div>
             </div>
 
@@ -394,31 +416,27 @@
                 </div>
             </div>
 
-            <!-- <div class="section">
-                <h2>📚 Μαθησιακοί Στόχοι & Χρονοδιάγραμμα</h2>
+            <div class="section">
+                <h2>Χρονοδιάγραμμα</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <h4>Φάση 1 (Μήνες 1-3)</h4>
-                        <p>Research APIs, architecture design, mobile development setup</p>
+                        <h4>Φάση 1 (2-3 Εβδομάδες)</h4>
+                        <p>Έρευνα αναγκών χρηστών, Research APIs, Architecture design, mobile development setup</p>
                     </div>
                     <div class="timeline-item">
-                        <h4>Φάση 2 (Μήνες 4-6)</h4>
-                        <p>Core functionality: flight tracking, basic UI, database integration</p>
+                        <h4>Φάση 2 (3 Μήνες)</h4>
+                        <p>Βασικές Λειτουργίες: FE & BE build, include APIs, database integration</p>
                     </div>
                     <div class="timeline-item">
-                        <h4>Φάση 3 (Μήνες 7-9)</h4>
-                        <p>Advanced features: AI recommendations, offline support, security</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h4>Φάση 4 (Μήνες 10-12)</h4>
-                        <p>Testing, optimization, deployment, documentation</p>
+                        <h4>Φάση 4 (1-2 Μήνες)</h4>
+                        <p>Testing, optimization, documentation</p>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
-            <div class="highlight">
+        <div class="highlight">
                 <h3>🚀 Καινοτομία & Επεκτασιμότητα</h3>
-                <p>Πρώτη εφαρμογή που συνδυάζει όλες τις παραπάνω λειτουργίες σε ένα ολοκληρωμένο ecosystem. Δυνατότητα επέκτασης με AΙ suggestions ή forum and ratings</p>
+                <p>Το Co-Traveller ξεχωρίζει γιατί προσφέρει <strong>επίσημες & έγκυρες ταξιδιωτικές πληροφορίες</strong> σε πραγματικό χρόνο, σε μια ενιαία, εύχρηστη εφαρμογή και συγκεντρώνει Οτιδήποτε Μπορεί να χρειαστεί ο χρήστης πρίν τη πτήση. Μπορεί εύκολα να επεκταθεί με AΙ-based προτάσεις, ratings ή κοινότητα χρηστών.</p>
             </div>
         </div>
     </div>
