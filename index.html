@@ -317,6 +317,22 @@
             font-size: 0.9em;
         }
 
+        .learning-goals {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 15px;
+            list-style: none;
+            padding-left: 0;
+        }
+        .learning-goals li {
+            background: #f8f9fa;
+            border-left: 3px solid #2563eb;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
         @media print {
             body {
                 background: white;
@@ -437,16 +453,17 @@
                 </div>
             </div>
 
-                        <h3>🎯 Μαθησιακοί Στόχοι</h3>
-            <ul style="list-style-type: '✔ '; padding-left: 1.2em; text-align: left;">
-                <li><strong>API integration & Data-driven UX</strong>: αξιοποίηση επίσημων APIs και προσωποποιημένων εμπειριών χρήστη</li>
-                <li><strong>Ενσωμάτωση LLM (OpenAI API)</strong>: χρήση γλωσσικών μοντέλων για προσωποποιημένο περιεχόμενο, βελτίωση UX και αξιοποίηση AI capabilities</li>
-
-                <li><strong>Πολυτροπική Αλληλεπίδραση</strong>: offline/online λειτουργίες, ειδοποιήσεις, χάρτες, real-time δεδομένα</li>
-                <li><strong>Full Stack Mobile Development</strong>: ανάπτυξη με React Native ή Flutter, Node.js & SQLite</li>
-                <li><strong>Feedback Loops</strong>: δυναμική προσαρμογή της εμπειρίας χρήστη βάσει εισροών</li>
-                <li><strong>Πλήρες Testing & Documentation</strong>: έλεγχοι λειτουργικότητας, usability testing, τεχνική τεκμηρίωση</li>
-            </ul>
+            <div class="section">
+                <h2>🎯 Μαθησιακοί Στόχοι</h2>
+                <ul class="learning-goals">
+                    <li><strong>API integration & Data-driven UX</strong>: αξιοποίηση επίσημων APIs και προσωποποιημένων εμπειριών χρήστη</li>
+                    <li><strong>Ενσωμάτωση LLM (OpenAI API)</strong>: χρήση γλωσσικών μοντέλων για προσωποποιημένο περιεχόμενο, βελτίωση UX και αξιοποίηση AI capabilities</li>
+                    <li><strong>Full Stack Mobile Development</strong>: ανάπτυξη με React Native, Node.js & SQLite</li>
+                    <li><strong>Real-Time Εμπειρία Χρήστη</strong>: offline/online λειτουργίες, ειδοποιήσεις, χάρτες, real-time δεδομένα</li>
+                    <li><strong>Πλήρες Testing</strong>: δυναμική προσαρμογή της εμπειρίας χρήστη βάσει εισροών</li>
+                    <li><strong>Αξιολογόγηση χρηστών & Documentation</strong>: έλεγχοι λειτουργικότητας, usability testing, τεχνική τεκμηρίωση</li>
+                </ul>
+            </div>
     </div>
 </div>
 </body>
