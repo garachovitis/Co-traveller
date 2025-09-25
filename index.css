@@ -17,7 +17,7 @@ body {
 }
 
 .container {
-    max-width: 210mm;
+    max-width: νονε;
     margin: 0 auto;
     background: white;
     border-radius: 15px;
@@ -210,6 +210,8 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
     margin-top: 15px;
 }
 
