@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-Traveller | Privacy Policy</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --bg-start: #dff7f1;
+            --bg-end: #e0ecff;
+            --card: rgba(255, 255, 255, 0.92);
+            --text: #17324d;
+            --muted: #4d647a;
+            --accent: #0f766e;
+            --accent-strong: #1d4ed8;
+            --border: rgba(23, 50, 77, 0.12);
+            --shadow: 0 24px 60px rgba(29, 78, 216, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(15, 118, 110, 0.16), transparent 28%),
+                linear-gradient(135deg, var(--bg-start), var(--bg-end));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .page {
+            width: min(920px, 100%);
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            backdrop-filter: blur(16px);
+        }
+
+        .hero {
+            padding: 48px 40px 28px;
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(29, 78, 216, 0.1));
+            border-bottom: 1px solid var(--border);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.75);
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            line-height: 1;
+        }
+
+        .subtitle {
+            margin: 0;
+            max-width: 640px;
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .content {
+            padding: 32px 40px 40px;
+            display: grid;
+            gap: 20px;
+        }
+
+        .card {
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.82);
+        }
+
+        .card h2 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            margin: 0 0 16px;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .placeholder {
+            border-style: dashed;
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.04), rgba(29, 78, 216, 0.06));
+        }
+
+        .footer {
+            padding: 0 40px 36px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 640px) {
+            .hero,
+            .content,
+            .footer {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .hero {
+                padding-top: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <span class="eyebrow">Co-Traveller</span>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">
+                Privacy and personal data protection is a core design principle of the application.
+            </p>
+        </section>
+
+        <section class="content">
+            <article class="card">
+                <h2>Data Storage</h2>
+                <p>
+                    Privacy and personal data protection is a core design principle of the application.
+                    For this reason, user data is stored locally on the device only, and we intentionally
+                    avoid collecting or retaining personally identifiable information.
+                </p>
+                <p>
+                    In particular, the app does not store sensitive details such as full name, passport
+                    information, seat number, or any other booking-specific identifiers. Instead, it stores
+                    only generalized, non-identifying preference/personality attributes that are required
+                    to personalize the experience, and these remain exclusively on the user's device.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>User Control</h2>
+                <p>
+                    Users can delete all locally stored data at any time through the in-app settings.
+                    Additionally, uninstalling the application removes all stored information, since no
+                    user data is persisted on our servers.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>External Services and Secure Transport</h2>
+                <p>
+                    When certain features require external services, for example travel document
+                    verification or routing, only the minimum necessary inputs are sent to the backend
+                    and then forwarded to the respective third-party APIs.
+                </p>
+                <p>
+                    All such communications take place over HTTPS POST requests, which provides
+                    transport-layer encryption end-to-end. We do not intercept, modify, or inspect the
+                    encrypted channel beyond relaying the required requests and normalizing the responses
+                    for the client.
+                </p>
+            </article>
+        </section>
+
+
+    </main>
+</body>
+</html>
