@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,9 +52,16 @@
             border-bottom: 1px solid var(--border);
         }
 
+        .hero-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 14px;
+        }
+
         .eyebrow {
             display: inline-block;
-            margin-bottom: 14px;
             padding: 8px 14px;
             border-radius: 999px;
             background: rgba(255, 255, 255, 0.75);
@@ -63,6 +70,31 @@
             font-weight: 700;
             letter-spacing: 0.04em;
             text-transform: uppercase;
+        }
+
+        .lang-switch {
+            display: inline-flex;
+            padding: 4px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.78);
+        }
+
+        .lang-button {
+            border: 0;
+            background: transparent;
+            color: var(--muted);
+            padding: 10px 14px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .lang-button.active {
+            background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+            color: #fff;
         }
 
         h1 {
@@ -107,15 +139,22 @@
             margin-bottom: 0;
         }
 
-        .placeholder {
-            border-style: dashed;
-            background: linear-gradient(135deg, rgba(15, 118, 110, 0.04), rgba(29, 78, 216, 0.06));
-        }
-
         .footer {
             padding: 0 40px 36px;
             color: var(--muted);
             font-size: 0.95rem;
+        }
+
+        [data-lang] {
+            display: none;
+        }
+
+        body.lang-en [data-lang="en"] {
+            display: block;
+        }
+
+        body.lang-gr [data-lang="gr"] {
+            display: block;
         }
 
         @media (max-width: 640px) {
@@ -129,61 +168,131 @@
             .hero {
                 padding-top: 32px;
             }
+
+            .hero-top {
+                flex-direction: column;
+                align-items: stretch;
+            }
         }
     </style>
 </head>
-<body>
+<body class="lang-en">
     <main class="page">
         <section class="hero">
-            <span class="eyebrow">Co-Traveller</span>
-            <h1>Privacy Policy</h1>
-            <p class="subtitle">
+            <div class="hero-top">
+                <span class="eyebrow">Co-Traveller</span>
+                <div class="lang-switch" aria-label="Language switcher">
+                    <button class="lang-button active" type="button" data-set-lang="en">EN</button>
+                    <button class="lang-button" type="button" data-set-lang="gr">GR</button>
+                </div>
+            </div>
+
+            <h1 data-lang="en">Privacy Policy</h1>
+            <h1 data-lang="gr">Πολιτική Απορρήτου</h1>
+
+            <p class="subtitle" data-lang="en">
                 Privacy and personal data protection is a core design principle of the application.
+            </p>
+            <p class="subtitle" data-lang="gr">
+                Η προστασία της ιδιωτικότητας και των προσωπικών δεδομένων αποτελεί βασική αρχή σχεδιασμού της εφαρμογής.
             </p>
         </section>
 
         <section class="content">
             <article class="card">
-                <h2>Data Storage</h2>
-                <p>
+                <h2 data-lang="en">Data Storage</h2>
+                <h2 data-lang="gr">Αποθήκευση Δεδομένων</h2>
+
+                <p data-lang="en">
                     Privacy and personal data protection is a core design principle of the application.
                     For this reason, user data is stored locally on the device only, and we intentionally
                     avoid collecting or retaining personally identifiable information.
                 </p>
-                <p>
+                <p data-lang="gr">
+                    Η προστασία της ιδιωτικότητας και των προσωπικών δεδομένων αποτελεί βασική αρχή σχεδιασμού της εφαρμογής.
+                    Για τον λόγο αυτό, τα δεδομένα του χρήστη αποθηκεύονται μόνο τοπικά στη συσκευή και αποφεύγουμε
+                    σκόπιμα τη συλλογή ή διατήρηση προσωπικών στοιχείων ταυτοποίησης.
+                </p>
+
+                <p data-lang="en">
                     In particular, the app does not store sensitive details such as full name, passport
                     information, seat number, or any other booking-specific identifiers. Instead, it stores
                     only generalized, non-identifying preference/personality attributes that are required
                     to personalize the experience, and these remain exclusively on the user's device.
                 </p>
+                <p data-lang="gr">
+                    Συγκεκριμένα, η εφαρμογή δεν αποθηκεύει ευαίσθητα στοιχεία όπως ονοματεπώνυμο, πληροφορίες
+                    διαβατηρίου, αριθμό θέσης ή οποιοδήποτε άλλο στοιχείο που σχετίζεται ειδικά με κράτηση.
+                    Αντίθετα, αποθηκεύει μόνο γενικευμένα, μη ταυτοποιήσιμα χαρακτηριστικά προτιμήσεων ή
+                    προσωπικότητας που απαιτούνται για την προσωποποίηση της εμπειρίας, και αυτά παραμένουν
+                    αποκλειστικά στη συσκευή του χρήστη.
+                </p>
             </article>
 
             <article class="card">
-                <h2>User Control</h2>
-                <p>
+                <h2 data-lang="en">User Control</h2>
+                <h2 data-lang="gr">Έλεγχος από τον Χρήστη</h2>
+
+                <p data-lang="en">
                     Users can delete all locally stored data at any time through the in-app settings.
                     Additionally, uninstalling the application removes all stored information, since no
                     user data is persisted on our servers.
                 </p>
+                <p data-lang="gr">
+                    Οι χρήστες μπορούν να διαγράψουν όλα τα τοπικά αποθηκευμένα δεδομένα οποιαδήποτε στιγμή
+                    μέσα από τις ρυθμίσεις της εφαρμογής. Επιπλέον, η απεγκατάσταση της εφαρμογής αφαιρεί όλα
+                    τα αποθηκευμένα στοιχεία, καθώς κανένα δεδομένο χρήστη δεν διατηρείται στους διακομιστές μας.
+                </p>
             </article>
 
             <article class="card">
-                <h2>External Services and Secure Transport</h2>
-                <p>
+                <h2 data-lang="en">External Services and Secure Transport</h2>
+                <h2 data-lang="gr">Εξωτερικές Υπηρεσίες και Ασφαλής Μεταφορά</h2>
+
+                <p data-lang="en">
                     When certain features require external services, for example travel document
                     verification or routing, only the minimum necessary inputs are sent to the backend
                     and then forwarded to the respective third-party APIs.
                 </p>
-                <p>
+                <p data-lang="gr">
+                    Όταν ορισμένες λειτουργίες απαιτούν εξωτερικές υπηρεσίες, όπως για παράδειγμα έλεγχο
+                    ταξιδιωτικών εγγράφων ή δρομολόγηση, αποστέλλονται στο backend μόνο τα απολύτως απαραίτητα
+                    δεδομένα και στη συνέχεια προωθούνται στα αντίστοιχα APIs τρίτων.
+                </p>
+
+                <p data-lang="en">
                     All such communications take place over HTTPS POST requests, which provides
                     transport-layer encryption end-to-end. We do not intercept, modify, or inspect the
                     encrypted channel beyond relaying the required requests and normalizing the responses
                     for the client.
                 </p>
+                <p data-lang="gr">
+                    Όλες αυτές οι επικοινωνίες πραγματοποιούνται μέσω HTTPS POST requests, που παρέχουν
+                    κρυπτογράφηση σε επίπεδο μεταφοράς από άκρο σε άκρο. Δεν παρεμβαίνουμε, δεν τροποποιούμε
+                    και δεν επιθεωρούμε το κρυπτογραφημένο κανάλι πέρα από τη μεταφορά των απαραίτητων
+                    αιτημάτων και την κανονικοποίηση των απαντήσεων για τον client.
+                </p>
             </article>
         </section>
 
-
     </main>
+
+    <script>
+        const buttons = document.querySelectorAll("[data-set-lang]");
+
+        function setLanguage(lang) {
+            document.body.classList.remove("lang-en", "lang-gr");
+            document.body.classList.add("lang-" + lang);
+            document.documentElement.lang = lang === "gr" ? "el" : "en";
+
+            buttons.forEach((button) => {
+                button.classList.toggle("active", button.dataset.setLang === lang);
+            });
+        }
+
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => setLanguage(button.dataset.setLang));
+        });
+    </script>
 </body>
 </html>
